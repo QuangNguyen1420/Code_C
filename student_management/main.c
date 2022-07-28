@@ -11,13 +11,13 @@ typedef struct Students{
 Students *head;
 Students *tail;
 
-void NhapData(char *a , int *b)
+void EnterData(char *a , int *b)
 {
 	fflush(stdin);
 	printf("enter the name: ");
 //    gets(a);
 	scanf("%[^\n]s",a);
-    printf("enter the id: ");
+    printf("enter the math scores: ");
     scanf("%d",b);
    
     
@@ -26,7 +26,7 @@ void NhapData(char *a , int *b)
 void AddToHead()
 {
 	Students *NewStudent= (Students*)malloc(sizeof(Students));
-	NhapData(NewStudent->name,&(NewStudent->math));
+	EnterData(NewStudent->name,&(NewStudent->math));
 	if(head == NULL)
 	{
 		head = NewStudent;
@@ -76,7 +76,6 @@ void sortMathOfStudent(){
 	while(temp->next == tail)
 	{
 		printf("diem toan%d\n",prev->math);
-	
 		if(prev->math > temp->math){
 			swap(prev,temp);
 			x = prev;
